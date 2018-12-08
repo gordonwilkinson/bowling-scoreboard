@@ -33,4 +33,8 @@ More info on the rules at: www.topendsports.com/sport/tenpin/scoring.htm
 Will not check for valid rolls
 Will not check for correct number of rolls and frames
 Will not provide scores for intermediate frames
+This is a single player game( one line of American Ten-Pin Bowling)
+Returns scores according to American Ten-Pin Bowling rules
+Unfinished frames will be score as zero points
+Any frame scores submitted following the tenth frame will be ignored
 
