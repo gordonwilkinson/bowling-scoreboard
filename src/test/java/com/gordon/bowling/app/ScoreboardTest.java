@@ -1,6 +1,7 @@
 package com.gordon.bowling.app;
 
 import com.gordon.bowling.model.GameTypeParams;
+import com.gordon.bowling.model.Scoreboard;
 import com.gordon.bowling.services.ConsoleService;
 import com.gordon.bowling.services.GameService;
 import com.gordon.bowling.services.ScoreboardService;
@@ -26,11 +27,11 @@ public class ScoreboardTest {
     @Injectable
     ConsoleService consoleService;
 
-    @Injectable
     ScoreboardService scoreboardService;
 
     @Before
     public void verifyGameInitialization() {
+        scoreboardService = new ScoreboardService(new Scoreboard());
         gameService = new GameService(consoleService, scoreboardService);
         assertThat(gameService, is(notNullValue()));
     }
@@ -38,11 +39,23 @@ public class ScoreboardTest {
     @Test
     public void verifyZeroScore() {
         new Expectations() {{
-            int[][] scores = new int[10][3];
-            consoleService.getFrameScores();
+            int[][] scores = {
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0, 0}
+            };
+            consoleService.getFrameScores((int[][]) any);
             result = scores;
         }};
-        assertThat(gameService.getGameScore(), is(0));
+        gameService.playGame();
+        assertThat(gameService.getGameScoreResult(), is(0));
     }
 
     @Test
@@ -60,17 +73,37 @@ public class ScoreboardTest {
                     {10, 0},
                     {10, 10, 10}
             };
-            consoleService.getFrameScores();
+            consoleService.getFrameScores((int[][]) any);
             result = scores;
         }};
+        gameService.playGame();
 
-        System.out.println(String.format("Game score: %s", gameService.getGameScore()));
-        assertThat(gameService.getGameScore(), is(GameTypeParams.TEN_PIN.getPerfectScore()));
+        System.out.println(String.format("Game score: %s", gameService.getGameScoreResult()));
+        assertThat(gameService.getGameScoreResult(), is(GameTypeParams.TEN_PIN.getPerfectScore()));
     }
 
     @Test
     public void verifySpareScore() {
+        new Expectations() {{
+            int[][] scores = {
+                    {4, 6},
+                    {10, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0},
+                    {0, 0, 0}
+            };
+            consoleService.getFrameScores((int[][]) any);
+            result = scores;
+        }};
+        gameService.playGame();
 
+        System.out.println(String.format("Game score: %s", gameService.getGameScoreResult()));
+        assertThat(gameService.getGameScoreResult(), is(30));
     }
 
     @Test
