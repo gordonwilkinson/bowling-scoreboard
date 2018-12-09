@@ -15,7 +15,6 @@ public class GameService {
 
     private int gameScoreResult;
 
-
     public GameService(ConsoleService consoleService,
                        ScoreboardService scoreboardService) {
         this.consoleService = consoleService;

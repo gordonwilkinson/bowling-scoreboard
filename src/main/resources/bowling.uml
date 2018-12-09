@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.gordon.bowling</OriginalElement>
+  <nodes>
+    <node x="587.6519607843138" y="492.0">com.gordon.bowling.services.ScoreboardService</node>
+    <node x="518.1519607843138" y="323.0">com.gordon.bowling.model.Scoreboard</node>
+    <node x="0.0" y="948.0">com.gordon.bowling.Bowl</node>
+    <node x="171.65196078431381" y="514.0">com.gordon.bowling.services.ConsoleService</node>
+    <node x="845.9068627450981" y="959.0">com.gordon.bowling.app</node>
+    <node x="393.6519607843138" y="536.5">com.gordon.bowling.model.Game</node>
+    <node x="0.0" y="1063.5">com.gordon.bowling.model.GameTypeParams</node>
+    <node x="457.1519607843138" y="0.0">com.gordon.bowling.model.Frame</node>
+    <node x="151.65196078431376" y="693.0">com.gordon.bowling.services.GameService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.gordon.bowling.app" target="com.gordon.bowling.model.Scoreboard">
+      <point x="46.66666666666663" y="-15.0" />
+      <point x="948.5735294117648" y="928.0" />
+      <point x="991.6102941176471" y="928.0" />
+      <point x="991.6102941176471" y="462.0" />
+      <point x="692.2769607843138" y="462.0" />
+      <point x="74.625" y="59.5" />
+    </edge>
+    <edge source="com.gordon.bowling.services.GameService" target="com.gordon.bowling.services.ConsoleService">
+      <point x="-120.99999999999994" y="-92.5" />
+      <point x="0.0" y="48.5" />
+    </edge>
+    <edge source="com.gordon.bowling.app" target="com.gordon.bowling.app">
+      <point x="0.0" y="15.0" />
+      <point x="901.9068627450981" y="1009.0" />
+      <point x="825.9068627450981" y="1009.0" />
+      <point x="825.9068627450981" y="974.0" />
+      <point x="-56.0" y="-0.0" />
+    </edge>
+    <edge source="com.gordon.bowling.model.Scoreboard" target="com.gordon.bowling.model.Frame">
+      <point x="49.75" y="-59.5" />
+      <point x="667.4019607843138" y="298.0" />
+      <point x="697.9019607843138" y="298.0" />
+      <point x="80.25" y="136.5" />
+    </edge>
+    <edge source="com.gordon.bowling.app" target="com.gordon.bowling.services.ScoreboardService">
+      <point x="9.333333333333371" y="-15.0" />
+      <point x="911.2401960784315" y="898.0" />
+      <point x="892.1102941176471" y="898.0" />
+      <point x="892.1102941176471" y="673.0" />
+      <point x="796.4019607843138" y="673.0" />
+      <point x="41.75000000000003" y="70.5" />
+    </edge>
+    <edge source="com.gordon.bowling.model.Game" target="com.gordon.bowling.model.Scoreboard">
+      <point x="0.0" y="-26.0" />
+      <point x="480.6519607843138" y="472.0" />
+      <point x="592.7769607843138" y="472.0" />
+      <point x="-24.875" y="59.5" />
+    </edge>
+    <edge source="com.gordon.bowling.services.ScoreboardService" target="com.gordon.bowling.model.Scoreboard">
+      <point x="0.0" y="-70.5" />
+      <point x="754.6519607843138" y="472.0" />
+      <point x="642.5269607843138" y="472.0" />
+      <point x="24.875" y="59.5" />
+    </edge>
+    <edge source="com.gordon.bowling.Bowl" target="com.gordon.bowling.services.ConsoleService">
+      <point x="-21.25" y="-26.0" />
+      <point x="63.75" y="928.0" />
+      <point x="79.5" y="928.0" />
+      <point x="79.5" y="653.0" />
+      <point x="205.3186274509805" y="653.0" />
+      <point x="-67.33333333333331" y="48.5" />
+    </edge>
+    <edge source="com.gordon.bowling.app" target="com.gordon.bowling.services.GameService">
+      <point x="-46.66666666666663" y="-15.0" />
+      <point x="855.2401960784315" y="928.0" />
+      <point x="393.6519607843138" y="928.0" />
+      <point x="5.6843418860808015E-14" y="92.5" />
+    </edge>
+    <edge source="com.gordon.bowling.services.GameService" target="com.gordon.bowling.services.ScoreboardService">
+      <point x="121.00000000000006" y="-92.5" />
+      <point x="514.6519607843138" y="673.0" />
+      <point x="712.9019607843138" y="673.0" />
+      <point x="-41.75" y="70.5" />
+    </edge>
+    <edge source="com.gordon.bowling.Bowl" target="com.gordon.bowling.model.Scoreboard">
+      <point x="-63.75" y="-26.0" />
+      <point x="21.25" y="928.0" />
+      <point x="51.91666666666663" y="928.0" />
+      <point x="51.91666666666663" y="462.0" />
+      <point x="543.0269607843138" y="462.0" />
+      <point x="-74.625" y="59.5" />
+    </edge>
+    <edge source="com.gordon.bowling.Bowl" target="com.gordon.bowling.services.ScoreboardService">
+      <point x="21.25" y="-26.0" />
+      <point x="106.25" y="928.0" />
+      <point x="141.1519607843137" y="928.0" />
+      <point x="141.1519607843137" y="663.0" />
+      <point x="629.4019607843138" y="663.0" />
+      <point x="-125.25" y="70.5" />
+    </edge>
+    <edge source="com.gordon.bowling.Bowl" target="com.gordon.bowling.services.GameService">
+      <point x="63.75" y="-26.0" />
+      <point x="148.75" y="928.0" />
+      <point x="232.31862745098044" y="928.0" />
+      <point x="-161.33333333333334" y="92.5" />
+    </edge>
+    <edge source="com.gordon.bowling.app" target="com.gordon.bowling.services.ConsoleService">
+      <point x="-9.333333333333371" y="-15.0" />
+      <point x="892.5735294117648" y="908.0" />
+      <point x="715.7769607843138" y="908.0" />
+      <point x="715.7769607843138" y="653.0" />
+      <point x="339.98529411764713" y="653.0" />
+      <point x="67.33333333333331" y="48.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.49251401539288786" x="484.43043760838907" y="582.078774265945" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
