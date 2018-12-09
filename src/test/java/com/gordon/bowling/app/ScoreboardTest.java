@@ -1,12 +1,15 @@
 package com.gordon.bowling.app;
 
+import com.gordon.bowling.model.GameTypeParams;
 import com.gordon.bowling.services.ConsoleService;
 import com.gordon.bowling.services.GameService;
 import com.gordon.bowling.services.ScoreboardService;
 import mockit.Expectations;
 import mockit.Injectable;
+import mockit.integration.junit4.JMockit;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -15,10 +18,9 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by gordonwilkinson on 2018-12-08.
  */
-
+@RunWith(JMockit.class)
 public class ScoreboardTest {
 
-    @Injectable
     GameService gameService;
 
     @Injectable
@@ -29,12 +31,8 @@ public class ScoreboardTest {
 
     @Before
     public void verifyGameInitialization() {
-        consoleService = new ConsoleService();
-        scoreboardService = new ScoreboardService();
         gameService = new GameService(consoleService, scoreboardService);
         assertThat(gameService, is(notNullValue()));
-
-
     }
 
     @Test
@@ -49,7 +47,25 @@ public class ScoreboardTest {
 
     @Test
     public void verifyPerfectGame() {
+        new Expectations() {{
+            int[][] scores = {
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 0},
+                    {10, 10, 10}
+            };
+            consoleService.getFrameScores();
+            result = scores;
+        }};
 
+        System.out.println(String.format("Game score: %s", gameService.getGameScore()));
+        assertThat(gameService.getGameScore(), is(GameTypeParams.TEN_PIN.getPerfectScore()));
     }
 
     @Test
