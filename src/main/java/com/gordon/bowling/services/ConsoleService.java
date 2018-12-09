@@ -30,9 +30,11 @@ public class ConsoleService {
 
     private int[][] promptForScores() {
         System.out.println("Please enter scores for each frame requested. ");
-        System.out.println("Type exit to terminate your request - all input will be discarded. ");
-        System.out.println("For a score of zero hit enter. ");
-        System.out.println("For a strike hit x. ");
+        System.out.println("Save your entered score by pressing the return key");
+
+        System.out.println("Type exit to terminate your request - your total score as entered will be displayed. ");
+        System.out.println("For a score of zero press the return key.");
+        System.out.println("For a strike enter x. ");
 
         boolean running = true;
         int numFrames = scores.length;
