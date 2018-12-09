@@ -1,7 +1,6 @@
 package com.gordon.bowling.services;
 
 import com.gordon.bowling.model.Frame;
-import com.gordon.bowling.model.GameTypeParams;
 import org.springframework.stereotype.Service;
 
 /**
@@ -57,7 +56,7 @@ public class GameService {
     }
 
     private void processScores(int[][] frameScores) {
-        int numFrames = GameTypeParams.TEN_PIN.getNumFrames();
+        int numFrames = frameScores.length;
         int lastFrameIdx = numFrames - 1;
         for (int frameCnt = 0; frameCnt < numFrames; frameCnt++) {
             int pinCount1 = frameScores[frameCnt][0];
