@@ -38,7 +38,14 @@ Returns scores according to American Ten-Pin Bowling rules
 Unfinished frames will be score as zero points
 Any frame scores submitted following the tenth frame will be ignored
 
-
+### Running the application
+```
+git clone git@github.com:gordonwilkinson/bowling-scoreboard.git
+mvn package //  target/bowling-score-board-1.0-SNAPSHOT.jar  will be built
+java -cp <absolute path to>/target/bowling-score-board-1.0-SNAPSHOT.jar com.gordon.bowling.Bowl
+//You will be prompted with .. 1.0-SNAPSHOT.jar com.gordon.bowling.Bowl
+                               Let's play!  Getting score inputs...
+```
 
 Design Document: Bowling Game
 
